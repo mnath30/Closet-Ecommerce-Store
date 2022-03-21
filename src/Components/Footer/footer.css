@@ -1,0 +1,12 @@
+@import url('../../style/style.css');
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    border-radius: 8px 8px 0 0;
+}
+.back-to-top-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}

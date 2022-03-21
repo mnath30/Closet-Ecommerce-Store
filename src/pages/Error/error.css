@@ -1,0 +1,6 @@
+@import url('../../style/style.css');
+
+.error-image {
+    max-width: 16rem;
+    margin: 4rem auto;
+}

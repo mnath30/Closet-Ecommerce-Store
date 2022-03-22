@@ -4,7 +4,7 @@ import "./navbar.css"
 
 const Navbar=()=>{
     return (
-        <>
+        
         <header>
             <nav className="navigation">
                 <div className="nav-brand-logo">
@@ -32,7 +32,7 @@ const Navbar=()=>{
                 </div>
             </nav>
         </header>    
-        </>
+        
     )
 }
 export {Navbar};

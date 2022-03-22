@@ -9,7 +9,6 @@ const Footer=()=>{
         })
     }
     return(
-        <>
             <footer className="footer padding-sm txt-md">
                 <div className="padding-sm txt-bold"><button className="back-to-top-btn" onClick={scrollToTop}>Back to top</button></div>
                 <div className="flex flex-center">
@@ -22,7 +21,6 @@ const Footer=()=>{
                 </div> 
                 <p>&copy; 2022 Closet. All rights reserved</p>
             </footer> 
-        </>
     )
 }
 

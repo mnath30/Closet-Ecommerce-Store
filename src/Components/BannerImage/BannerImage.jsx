@@ -3,7 +3,6 @@ import {img01} from '../../asset';
 
 const BannerImage=()=>{
     return(
-        <>
             <div className="main-image">
                 <img className="responsive-img" src={img01} alt="closet-of-clothes"/>
                 <a href="productpage.html">
@@ -14,7 +13,6 @@ const BannerImage=()=>{
                     </div>
                 </a>
             </div>
-        </>
     )
 }
 

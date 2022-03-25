@@ -1,13 +1,13 @@
 // import { useState } from 'react'
 import './product-card.css'
 
-const ProductCard=({source,information,brand,itemname,price,rating,isAddedToWishlist,isAddedToCart, isOutOfStock})=>{
+const ProductCard=({product})=>{
 
     //The below code will be used later to change the text being displayed on button of the card
     // const [addToCart,setAddToCart]=useState(isAddedToCart?"Go to Cart":"Add to Cart")
     // const [addToWishlist,setAddToWishlist]=useState(isAddedToWishlist?"Remove from Wishlist":"Add to Wishlist")
-    
 
+    const {source,information,brand,itemname,price,rating,isAddedToWishlist,isAddedToCart}=product
     return(
         <div className="card card-vert ">
             <div className="card-img card-header-with-badge">

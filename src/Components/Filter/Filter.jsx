@@ -1,62 +1,53 @@
 import './filter.css'
 const Filter=()=>{
+    const rating=[{id:"4-stars-and-above",ratinglabel:"4 stars and above"},
+    {id:"3-stars-and-above",ratinglabel:"3 stars and above"},
+    {id:"2-stars-and-above",ratinglabel:"2 stars and above"},
+    {id:"1-stars-and-above",ratinglabel:"1 stars and above"}]
+    const category=[{isChecked:true,categoryname:"All Categories"},
+    {isChecked:false,categoryname:"Category 1"},
+    {isChecked:false,categoryname:"Category 2"},
+    {isChecked:false,categoryname:"Category 3"},
+    {isChecked:false,categoryname:"Category 4"}]
+    const sortingCategory=[{id:"New-Arrivals",categoryname:"New Arrivals"},
+    {id:"Popularity",categoryname:"Popularity"},
+    {id:"Price-high-to-low",categoryname:"Price - High to Low"},
+    {id:"Price-low-to-high",categoryname:"Price - Low to High"}
+    ]
+
+
     return(
         <div className="flex-column">
-                    <button className="btn-link padding-sm">Clear All Filters</button>  
-                    <hr/>            
-                    <h3 className="padding-sm">Filters</h3>
-                    <h3 className="padding-sm">Price Range</h3>
-                    <input className="padding-sm" type="range" min="1" max="100" value="50"/>
-                    <p className="padding-sm">Price under: 500</p>
-                    <h3 className="padding-sm">Category</h3>
-                    <div className="padding-sm">
-                        <input type="checkbox" id="all categories" name="all categories" checked/>
-                        <label for="all categories">All Categories</label>
-                        <br/>
-                        <input type="checkbox" id="category 1" name="category 1"/>
-                        <label for="category 1">Category 1</label>
-                        <br/>
-                        <input type="checkbox" id="category 2" name="category 2"/>
-                        <label for="category 2">Category 2</label>
-                        <br/>
-                        <input type="checkbox" id="category 3" name="category 3"/>
-                        <label for="category 3">Category 3</label>
-                    </div>
-                    <h3 className="padding-sm">Rating</h3>
-                    <div className="padding-sm">
-                        <input type="radio" id="4 stars and above"
-                         name="rating" value="4 stars and above"/>
-                        <label for="4 stars and above">4 Stars & above</label>
-                        <br/>
-                        <input type="radio" id="3 stars and above"
-                         name="rating" value="3 stars and above"/>
-                        <label for="3 stars and above">3 Stars & above</label>
-                        <br/>
-                        <input type="radio" id="2 stars and above"
-                         name="rating" value="2 stars and above"/>
-                        <label for="2 stars and above">2 Stars & above</label>
-                        <br/>
-                        <input type="radio" id="1 stars and above"
-                         name="rating" value="1 stars and above"/>
-                        <label for="1 stars and above">1 Stars & above</label>
-                    </div>
-                    <h3 className="padding-sm">Sort By</h3>
-                    <div className="padding-sm">
-                        <input type="radio" id="New Arrivals"
-                         name="sorting" value="New Arrivals"/>
-                        <label for="New Arrivals">New Arrivals</label>
-                        <br/>
-                        <input type="radio" id="Popularity"
-                         name="sorting" value="Popularity"/>
-                        <label for="Popularity">Popularity</label>
-                        <br/>
-                        <input type="radio" id="Price - High to Low"
-                         name="sorting" value="Price - High to Low"/>
-                        <label for="Price - High to Low">Price - High to Low</label>
-                        <br/>
-                        <input type="radio" id="Price - Low to High"
-                         name="sorting" value="Price - Low to High"/>
-                        <label for="Price - Low to High">Price - Low to High</label>
+            <button className="btn-link padding-sm">Clear All Filters</button>  
+            <hr/>            
+            <h3 className="padding-sm">Filters</h3>
+            <h3 className="padding-sm">Price Range</h3>
+            <input className="padding-sm" type="range" min="1" max="100" value="50"/>
+            <p className="padding-sm">Price under: 500</p>
+            <h3 className="padding-sm">Category</h3>
+            <div className="padding-sm">
+                {category.map(element=>(<>
+                    <input type="checkbox" id={element.categoryname} name={element.categoryname} checked={element.isChecked}/>
+                    <label htmlFor={element.categoryname}>{element.categoryname}</label>
+                    <br/>
+                </>))}
+            </div>
+            <h3 className="padding-sm">Rating</h3>
+            <div className="padding-sm">
+                {rating.map(element=>(<>
+                    <input type="radio" id={element.id} name="rating" value={element.id}/>
+                    <label htmlFor={element.id}>{element.ratinglabel}</label>
+                    <br/>    
+                </>))}
+                        
+            </div>
+            <h3 className="padding-sm">Sort By</h3>
+            <div className="padding-sm">
+                {sortingCategory.map(element=>(<>
+                    <input type="radio" id={element.id} name="sorting" value={element.id}/>
+                    <label htmlFor={element.id}>{element.categoryname}</label>
+                    <br/>
+                </>))}
             </div>
         </div>
     )

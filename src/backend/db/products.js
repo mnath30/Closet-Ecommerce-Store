@@ -1,3 +1,4 @@
+import {v4 as uuid } from "uuid"
 import {img9,img10} from "../../asset";
 
 /**
@@ -7,7 +8,7 @@ import {img9,img10} from "../../asset";
 
 export const products = [
   {
-    id:"a1",
+    _id:uuid(),
     itemname:"Blue Shirt",
     category:'Shirt',
     brand:'Lee',
@@ -22,7 +23,7 @@ export const products = [
 
 },
 {
-    id:"a2",
+    _id:uuid(),
     itemname:"Blue Skirt",
     category:'Skirt',
     brand:'Lee Cooper',
@@ -37,7 +38,7 @@ export const products = [
 
 },
 {
-    id:"a3",
+    _id:uuid(),
     itemname:"Blue Skirt",
     category:'Skirt',
     brand:'Lee Cooper',
@@ -52,7 +53,7 @@ export const products = [
 
 },
 {
-    id:"a4",
+    _id:uuid(),
     itemname:"Blue Shirt",
     category:'Shirt',
     brand:'Lee',
@@ -67,7 +68,7 @@ export const products = [
 
 },
 {
-    id:"a5",
+    _id:uuid(),
     itemname:"Yellow Dress",
     category:'Dress',
     brand:'Dressberry',
@@ -82,7 +83,7 @@ export const products = [
 
 },
 {
-    id:"a6",
+    _id:uuid(),
     itemname:"Trouser",
     category:'Pant',
     brand:'Raymonds',
@@ -97,7 +98,7 @@ export const products = [
 
 },
 {
-    id:"a7",
+    _id:uuid(),
     itemname:"Red Top",
     category:'Tops',
     brand:'Lee',
@@ -111,7 +112,7 @@ export const products = [
     isOutOfStock:false
 
 },{
-    id:"a8",
+    _id:uuid(),
     itemname:"Black Shirt",
     category:'Shirt',
     brand:'Jinny & Jhonnny',
@@ -126,7 +127,7 @@ export const products = [
 
 },
 {
-    id:"a9",
+    _id:uuid(),
     itemname:"Black frock",
     category:'Dress',
     brand:'Jinny & Jhonnny',
@@ -141,7 +142,7 @@ export const products = [
 
 },
 {
-    id:"b1",
+    _id:uuid(),
     itemname:"Blue Jacket",
     category:'Jacket',
     brand:'Only',
@@ -156,7 +157,7 @@ export const products = [
 
 },
 {
-    id:"b2",
+    _id:uuid(),
     itemname:"Black Hooodie",
     category:'Hoodie',
     brand:'Lee Cooper',
@@ -171,7 +172,7 @@ export const products = [
 
 },
 {
-    id:"b3",
+    _id:uuid(),
     itemname:"Blue Jeans",
     category:'Jeans',
     brand:'Lee Cooper',

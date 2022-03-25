@@ -1,0 +1,9 @@
+@import url(../../style/style.css);
+
+.card-btn-main {
+    background-color: var(--secondary-color);
+}
+.card-btn-second {
+    border: 2px solid var(--secondary-color);
+    background-color: transparent;
+}

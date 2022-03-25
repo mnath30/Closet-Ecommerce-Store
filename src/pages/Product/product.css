@@ -1,0 +1,32 @@
+
+/* Heading */
+.heading {
+    padding:0.8rem 1.6rem 0 1.6rem;
+}
+
+/* Main content */
+.product-grid {
+    display:grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    "product-filter main-product";
+}
+
+/* Filter section */
+.product-filter {
+    grid-area: product-filter;
+    position: sticky;
+    top:6rem;
+    align-self: start;
+    text-align: left;
+}
+
+.main-product {
+    grid-area: main-product;
+}
+
+@media only screen and (max-width:520px) {
+    .product-filter {
+        display: none;
+    }
+}

@@ -1,9 +1,10 @@
-import { ProductCard,Filter,Footer } from "../../Components";
+import { ProductCard,Filter,Footer,ProductNotFound } from "../../Components";
 import "./product.css"
 import { useProducts } from "../../context/ProductContext";
 
 const Product=()=>{
-    const {data}=useProducts();
+    
+    const {updatedProductList}=useProducts();    
     return(
         <>
         <div className="product-grid padding-lg">
@@ -11,15 +12,16 @@ const Product=()=>{
                 <Filter/>
             </aside>
             <div className="main-product">
-                <h3 className="txt-center txt-lg heading">Showing Products</h3>
+                <h3 className="txt-center txt-lg heading">Showing Products : {updatedProductList.length}</h3>
                 <div className="flex padding-lg">   
-                    {data.map(ele=><ProductCard key={ele.id} product={ele}/>)}
+                    {updatedProductList.length===0?<ProductNotFound/>:updatedProductList?.map(ele=><ProductCard key={ele._id} product={ele}/>)}
                 </div>
             </div>
         </div>
         <Footer/>
         </>    
     ) 
+    
 }
 
 export {Product}

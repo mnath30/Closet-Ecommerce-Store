@@ -1,26 +1,25 @@
-import {createContext,useContext} from "react";
-import { useState,useEffect } from "react";
-import axios from "axios";
+import { createContext,useContext } from "react";
+import { useState,useReducer,useEffect } from "react";
+import { filterReducer } from "../reducer/filterReducer"
+import { useFetch } from "../hooks/useFetch";
+import { compose,sorting,filterByRating,filterByPrice,filterbrands,initialState } from "../helper";
 
 const ProductContext=createContext(null);
 const useProducts=()=>useContext(ProductContext);
-const ProductProvider=({children})=>{
-    const [data,setData]=useState([]);
-    useEffect(()=>{
-        (async ()=>{
-            try {
-                const responseData=await axios.get('/api/products');
-                setData(responseData.data.products)
-            }
-            catch{
-                console.log('There was some error in processing your request')
-            }
-        })() 
-    },[])
-    
 
-    return(
-        <ProductContext.Provider value={{data}}>
+const ProductProvider=({children})=>{
+    const {data}=useFetch();
+    const [productList,setProductList]=useState([]) 
+    const [products,productsDispatch]=useReducer(filterReducer,initialState)
+
+    useEffect(()=>{
+        setProductList(data)     
+    },[data])
+   
+    const updatedProductList=compose(filterbrands,sorting,filterByRating,filterByPrice)(products,[...productList])
+
+    return(   
+        <ProductContext.Provider value={{updatedProductList,products,productsDispatch}}>
             {children}
         </ProductContext.Provider>
     )

@@ -13,5 +13,6 @@ import img16 from "./img16.jpg";
 import img17 from "./img17.jpg";
 import img18 from "./img18.jpg";
 import errorimg from "./error-img.svg"
+import errorproductimg from "./error-product-img.svg"
 
-export {img01,img04,img05,img06,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,errorimg}
+export {img01,img04,img05,img06,img9,img10,img11,img12,img13,img14,img15,img16,img17,img18,errorimg,errorproductimg}

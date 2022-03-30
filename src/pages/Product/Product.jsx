@@ -12,7 +12,7 @@ const Product=()=>{
                 <Filter/>
             </aside>
             <div className="main-product">
-                <h3 className="txt-center txt-lg heading">Showing Products</h3>
+                <h3 className="txt-center txt-lg heading">Showing Products : {updatedProductList.length}</h3>
                 <div className="flex padding-lg">   
                     {updatedProductList.length===0?<ProductNotFound/>:updatedProductList?.map(ele=><ProductCard key={ele._id} product={ele}/>)}
                 </div>

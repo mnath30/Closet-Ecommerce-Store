@@ -30,7 +30,7 @@ const Filter=()=>{
             <hr/> 
 
             <h3 className="padding-sm">Filters</h3>
-            
+
             <h3 className="padding-sm">Price Range</h3>
             <input className="padding-sm" 
             type="range" min="500" max="5000" step="500" 
@@ -58,7 +58,7 @@ const Filter=()=>{
                     id={element.id} 
                     name="rating" 
                     value={element.id} 
-                    onClick={()=>productsDispatch({type:element.id,payload:element.id})} 
+                    onClick={()=>productsDispatch({type:"RATING",payload:element.id})} 
                     checked={products.rating===element.id}
                     />
                     <label htmlFor={element.id}>{element.ratinglabel}</label>

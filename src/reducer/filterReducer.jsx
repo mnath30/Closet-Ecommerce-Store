@@ -10,17 +10,17 @@ const filterReducer=(state,action)=>{
                 state.listofbrands.filter(ele=>ele!==action.payload):
                 [...state.listofbrands,action.payload]}
 
-        case "1_STAR_AND_ABOVE":
+        case "RATING":
             return {...state,rating:action.payload}
 
-        case "2_STARS_AND_ABOVE": 
-            return {...state,rating:action.payload}
+        // case "2_STARS_AND_ABOVE": 
+        //     return {...state,rating:action.payload}
 
-        case "3_STARS_AND_ABOVE":
-            return {...state,rating:action.payload}
+        // case "3_STARS_AND_ABOVE":
+        //     return {...state,rating:action.payload}
 
-        case "4_STARS_AND_ABOVE":       
-            return {...state,rating:action.payload}  
+        // case "4_STARS_AND_ABOVE":       
+        //     return {...state,rating:action.payload}  
 
         case "PRICE_HIGH_TO_LOW":
             return {...state,sorting:action.payload}

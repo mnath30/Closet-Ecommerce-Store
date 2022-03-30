@@ -11,16 +11,7 @@ const filterReducer=(state,action)=>{
                 [...state.listofbrands,action.payload]}
 
         case "RATING":
-            return {...state,rating:action.payload}
-
-        // case "2_STARS_AND_ABOVE": 
-        //     return {...state,rating:action.payload}
-
-        // case "3_STARS_AND_ABOVE":
-        //     return {...state,rating:action.payload}
-
-        // case "4_STARS_AND_ABOVE":       
-        //     return {...state,rating:action.payload}  
+            return {...state,rating:action.payload} 
 
         case "PRICE_HIGH_TO_LOW":
             return {...state,sorting:action.payload}

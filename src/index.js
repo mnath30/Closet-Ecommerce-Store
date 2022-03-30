@@ -12,8 +12,8 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <ProductProvider>
-      <App/>
+      <ProductProvider>
+        <App/>
       </ProductProvider>
     </BrowserRouter>
   </React.StrictMode>,

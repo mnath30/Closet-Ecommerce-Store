@@ -1,0 +1,9 @@
+@import url('../../style/style.css');
+
+.error-img-heading {
+  text-align: center;
+}
+.error-img {
+  margin: auto;
+  height: 20rem;
+}

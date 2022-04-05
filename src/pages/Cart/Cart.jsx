@@ -30,7 +30,7 @@ const Cart = () => {
   useEffect(() => {
     const price = cart.reduce((prev, curr) => prev + curr.price * curr.qty, 0);
     cartWishlistDispatch({ type: "TOTAL_PRICE", payload: price });
-  }, [cart]);
+  }, [cartWishlistDispatch, cart]);
   return (
     <>
       <h4 className="heading-h4 txt-center txt-lg">My Shopping Bag</h4>

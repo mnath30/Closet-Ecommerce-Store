@@ -1,0 +1,44 @@
+@import url("../../style/style.css");
+
+/* Heading */
+.heading-h4 {
+  padding: 0.8rem 1.6rem 0 1.6rem;
+}
+
+.main-product {
+  grid-area: product;
+  justify-self: center;
+}
+
+/* Main content */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "product pricing";
+  height: 100vh;
+}
+
+/* media queries */
+@media only screen and (max-width: 850px) {
+  .cart-card {
+    margin: 0.8rem;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .grid {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "product"
+      "pricing";
+    justify-items: center;
+  }
+  .main-pricing {
+    position: static;
+    width: inherit;
+  }
+}

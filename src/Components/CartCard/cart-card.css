@@ -1,0 +1,31 @@
+@import url("../../style/style.css");
+
+/* Product List */
+.cart-card {
+  margin: 1.6rem;
+  max-width: 25rem;
+}
+
+.qty {
+  font-size: 1rem;
+}
+.rounded-btn {
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
+  border-radius: 50%;
+  height: 1.2rem;
+  line-height: 1.2rem;
+  width: 1.2rem;
+}
+
+/* Button */
+.cart-main-btn {
+  background-color: var(--secondary-btn-color);
+}
+.btn-card-second {
+  border-color: var(--secondary-btn-color);
+}
+.cart-main-btn:hover,
+.btn-card-second:hover {
+  background-color: var(--dark-secondary-btn);
+}

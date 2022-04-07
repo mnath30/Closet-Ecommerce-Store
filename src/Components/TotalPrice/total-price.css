@@ -1,0 +1,21 @@
+@import url("../../style/style.css");
+@import url("../../pages/Cart/cart.css");
+
+/* Pricing Card*/
+.main-pricing {
+  align-self: start;
+  grid-area: pricing;
+  min-width: 14rem;
+  position: sticky;
+  top: 4rem;
+}
+.pricing-details {
+  justify-content: space-between;
+}
+.card-vert {
+  max-width: 24rem;
+  margin: 1.6rem;
+}
+.main-pricing button.btn-disabled {
+  cursor: not-allowed;
+}

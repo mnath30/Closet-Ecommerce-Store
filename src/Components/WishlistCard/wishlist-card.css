@@ -1,0 +1,11 @@
+@import url('../../style/style.css');
+
+/* Block button */
+.btn-block {
+    background-color: var(--secondary-color);
+}
+.btn-block:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+    opacity: 0.8;
+}

@@ -32,7 +32,10 @@ Checkout the live application here [Closet](https://shop-from-closet.netlify.app
 ## Technology used
 
 Closet is made using HTML, CSS, React and it is hosted using Netlify.
- 
 
+## Demonstration
+
+
+https://user-images.githubusercontent.com/55870039/162272254-9d7ff807-1e12-49c8-864d-0e8b09f6ec3d.mp4
 
 

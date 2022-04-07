@@ -1,14 +1,15 @@
-export { compose } from './compose'
-export { filterbrands } from './filterbrands'
-export { filterByPrice } from './filterByPrice'
-export { filterByRating } from './filterByRating'
-export { sorting } from './sorting'
-export {initialState} from './initialState'
-export { cartWishlistInitialState } from './cartWishlistInitialState'
-export { addToCart } from './addToCart'
-export { addToWishlist } from './addToWishlist'
-export { incrementQuantity, decrementQuantity } from './changeQuantity'
-export { moveToCart } from './moveToCart'
-export { removeFromCart } from './removeFromCart'
-export {removeFromWishlist } from './removeFromWishlist' 
-export { moveToWishlist } from './moveToWishlist'
+export { compose } from "./compose";
+export { filterbrands } from "./filterbrands";
+export { filterByPrice } from "./filterByPrice";
+export { filterByRating } from "./filterByRating";
+export { sorting } from "./sorting";
+export { initialState } from "./initialState";
+export { cartWishlistInitialState } from "./cartWishlistInitialState";
+export { addToCart } from "./addToCart";
+export { addToWishlist } from "./addToWishlist";
+export { incrementQuantity, decrementQuantity } from "./changeQuantity";
+export { moveToCart } from "./moveToCart";
+export { removeFromCart } from "./removeFromCart";
+export { removeFromWishlist } from "./removeFromWishlist";
+export { moveToWishlist } from "./moveToWishlist";
+export { filterByGender } from "./filterByGender";

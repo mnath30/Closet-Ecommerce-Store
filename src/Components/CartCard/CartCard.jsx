@@ -13,8 +13,8 @@ const CartCard = ({ item }) => {
         <h5 className="card-header">{brand}</h5>
         <p className="card-para">
           {itemname}
-          <br />
-          Rs. {price}
+
+          <div>Rs. {price}</div>
         </p>
         <div className="qty padding-sm">
           Quantity:

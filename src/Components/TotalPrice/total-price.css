@@ -16,3 +16,6 @@
   max-width: 24rem;
   margin: 1.6rem;
 }
+.main-pricing button.btn-disabled {
+  cursor: not-allowed;
+}

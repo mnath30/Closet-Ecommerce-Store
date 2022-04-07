@@ -37,7 +37,12 @@ const TotalPrice = ({ discount = 200, deliverycharges = 100 }) => {
           </div>
         </div>
         <div className="card-buttons">
-          <button className="btn-card main-btn btn-block txt-md">
+          <button
+            className={`btn-card main-btn btn-block txt-md ${
+              totalPrice === 0 ? "btn-disabled" : ""
+            }`}
+            disabled={totalPrice === 0}
+          >
             Place Order
           </button>
         </div>

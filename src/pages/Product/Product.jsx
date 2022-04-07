@@ -3,7 +3,7 @@ import "./product.css";
 import { useProducts } from "../../context/ProductContext";
 
 const Product = () => {
-  const { updatedProductList } = useProducts();
+  const { products, updatedProductList } = useProducts();
   return (
     <>
       <div className="product-grid padding-lg">
@@ -14,6 +14,15 @@ const Product = () => {
           <h3 className="txt-center txt-lg heading">
             Showing Products : {updatedProductList.length}
           </h3>
+
+          {products.gender !== null && (
+            <h3 className="txt-center txt-lg heading">
+              Category:{" "}
+              {products.gender.charAt(0).toUpperCase() +
+                products.gender.slice(1)}
+            </h3>
+          )}
+
           <div className="flex padding-lg">
             {updatedProductList.length === 0 ? (
               <ProductNotFound />

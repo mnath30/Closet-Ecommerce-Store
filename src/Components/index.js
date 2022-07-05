@@ -6,9 +6,24 @@ import { Footer } from "./Footer/Footer";
 import { Filter } from "./Filter/Filter";
 import { ProductCard } from "./ProductCard/ProductCard";
 import { ProductNotFound } from "./ProductNotFound/ProductNotFound";
-import { WishlistCard } from "./WishlistCard/WishlistCard"
+import { WishlistCard } from "./WishlistCard/WishlistCard";
 import { CartCard } from "./CartCard/CartCard";
 import { TotalPrice } from "./TotalPrice/TotalPrice";
 import { EmptyPage } from "./EmptyPage/EmptyPage";
+import { Loader } from "./Loader/Loader";
 
-export { Navbar,BannerImage,GenderCategoryCard,StyleCategoryCard,Footer,Filter,ProductCard,ProductNotFound,WishlistCard,CartCard,TotalPrice,EmptyPage }
+export {
+  Navbar,
+  BannerImage,
+  GenderCategoryCard,
+  StyleCategoryCard,
+  Footer,
+  Filter,
+  ProductCard,
+  ProductNotFound,
+  WishlistCard,
+  CartCard,
+  TotalPrice,
+  EmptyPage,
+  Loader,
+};

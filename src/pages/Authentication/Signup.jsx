@@ -30,7 +30,7 @@ const Signup = () => {
         authDispatch
       );
       if (response.hasOwnProperty("errorMsg")) {
-        setErrorMsg(response.setErrorMsg);
+        setErrorMsg(response.errorMsg);
       } else {
         setUserDetails({
           ...userDetails,

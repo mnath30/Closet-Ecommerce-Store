@@ -8,7 +8,6 @@ const loginService = async ({ email, password }, dispatch) => {
       email,
       password,
     });
-    console.log(response);
     if (response.status === 200) {
       dispatch({ type: LOGIN, payload: response.data });
       return { username: response.data?.foundUser?.fullName };
@@ -20,7 +19,6 @@ const loginService = async ({ email, password }, dispatch) => {
       return { errorMsg: "There was some error in processing your request" };
     }
   } catch (error) {
-    console.log(error);
     dispatch({
       type: AUTHERROR,
       payload: "There was some error in processing your request",
@@ -52,7 +50,6 @@ const signupService = async (
       return { errorMsg: "There was some error in processing your request" };
     }
   } catch (error) {
-    console.log(error);
     dispatch({
       type: AUTHERROR,
       payload: "There was some error in processing your request",

@@ -37,9 +37,7 @@ const Filter = () => {
         Clear All Filters
       </button>
       <hr />
-
       <h3 className="padding-sm">Filters</h3>
-
       <h3 className="padding-sm">Price Range</h3>
       <input
         className="padding-sm"
@@ -70,7 +68,7 @@ const Filter = () => {
                 })
               }
             />
-            <label htmlFor={element.brandname}>{element.brandname}</label>
+            <label htmlFor={element.id}>{element.brandname}</label>
             <br />
           </div>
         ))}

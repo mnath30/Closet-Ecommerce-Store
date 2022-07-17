@@ -1,12 +1,15 @@
 import logo from "../../asset/_Logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./navbar.css";
-import { useProducts } from "../../context/ProductContext";
-import { useNavigate } from "react-router-dom";
+import { useProducts, useCartWishlist } from "../../context";
 
 const Navbar = () => {
   const { productsDispatch } = useProducts();
+  const { cartWishlist } = useCartWishlist();
+  const { wishlist, cart } = cartWishlist;
   const navigate = useNavigate();
+  const encodedToken = localStorage.getItem("encodedToken");
+
   const filterGender = (id) => {
     productsDispatch({
       type: "FILTER_BY_GENDER",
@@ -14,6 +17,7 @@ const Navbar = () => {
     });
     navigate("/product");
   };
+
   return (
     <header>
       <nav className="navigation">
@@ -76,6 +80,9 @@ const Navbar = () => {
                 className={(navData) => (navData.isActive ? "nav-active" : "")}
               >
                 <i className="far fa-heart"></i>
+                {encodedToken && (
+                  <span className="navbar-badge">{wishlist.length}</span>
+                )}
               </NavLink>
             </li>
             <li className="nav-li">
@@ -84,6 +91,9 @@ const Navbar = () => {
                 className={(navData) => (navData.isActive ? "nav-active" : "")}
               >
                 <i className="fas fa-shopping-cart"></i>
+                {encodedToken && (
+                  <span className="navbar-badge">{cart.length}</span>
+                )}
               </NavLink>
             </li>
           </ul>

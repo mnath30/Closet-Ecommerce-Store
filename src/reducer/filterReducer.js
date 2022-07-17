@@ -1,7 +1,11 @@
 import { initialState } from "../helper";
+import { GET_ALL_PRODUCTS } from "../helper/constants";
 
 const filterReducer = (state, action) => {
   switch (action.type) {
+    case GET_ALL_PRODUCTS:
+      return { ...state, productData: action.payload };
+
     case "FILTER_BY_PRICE":
       return { ...state, pricerange: action.payload };
 

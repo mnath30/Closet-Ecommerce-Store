@@ -13,6 +13,12 @@ const initialUserState = {
     : "",
   loading: false,
   error: "",
+  cart: [],
+  cartLoading: false,
+  cartError: "",
+  wishlistLoading: false,
+  wishlist: [],
+  wishlistError: "",
 };
 
 const AuthProvider = ({ children }) => {

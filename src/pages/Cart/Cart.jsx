@@ -10,18 +10,11 @@ const emptydata = {
   message: "Your Cart is Empty",
 };
 
-const DisplayCart = ({ cartItems }) => {
-  return (
-    <div className="grid">
-      <TotalPrice />
-      <div className="main-product">
-        {cartItems.map((element) => (
-          <CartCard key={element._id} item={element} />
-        ))}
-      </div>
-    </div>
-  );
-};
+// const DisplayCart = ({ cartItems }) => {
+//   return (
+
+//   );
+// };
 
 const Cart = () => {
   const { cartWishlist, cartWishlistDispatch } = useCartWishlist();
@@ -31,6 +24,7 @@ const Cart = () => {
     const price = cart.reduce((prev, curr) => prev + curr.price * curr.qty, 0);
     cartWishlistDispatch({ type: "TOTAL_PRICE", payload: price });
   }, [cartWishlistDispatch, cart]);
+
   return (
     <>
       <h4 className="heading-h4 txt-center txt-lg">My Shopping Bag</h4>
@@ -38,7 +32,14 @@ const Cart = () => {
         {cart.length === 0 ? (
           <EmptyPage item={emptydata} />
         ) : (
-          <DisplayCart cartItems={cart} />
+          <div className="grid">
+            <TotalPrice />
+            <div className="main-product">
+              {cart.map((element) => (
+                <CartCard key={element._id} item={element} />
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </>

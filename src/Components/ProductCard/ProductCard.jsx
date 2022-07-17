@@ -1,14 +1,21 @@
 import "./product-card.css";
-import { useCartWishlist } from "../../context/CartWishlistContext";
+import { useCartWishlist } from "../../context";
 import { Link } from "react-router-dom";
+import {
+  addToCartService,
+  addToWishlistService,
+  deleteFromWishlistService,
+} from "../../services";
 
 const ProductCard = ({ product }) => {
   const { cartWishlist, cartWishlistDispatch } = useCartWishlist();
   const { source, information, brand, itemname, price, rating, _id } = product;
-  const isInCart = cartWishlist.cart.some((element) => element._id === _id);
-  const isInWishlist = cartWishlist.wishlist.some(
+  const isInCart = cartWishlist?.cart.some((element) => element._id === _id);
+  const isInWishlist = cartWishlist?.wishlist.some(
     (element) => element._id === _id
   );
+  const encodedToken = localStorage.getItem("encodedToken");
+
   return (
     <div className="card card-vert ">
       <div className="card-img card-header-with-badge">
@@ -36,7 +43,7 @@ const ProductCard = ({ product }) => {
             <button
               className="btn-card bg-secondary card-btn-main"
               onClick={() =>
-                cartWishlistDispatch({ type: "ADD_TO_CART", payload: product })
+                addToCartService(cartWishlistDispatch, encodedToken, product)
               }
             >
               Add to Cart
@@ -46,10 +53,11 @@ const ProductCard = ({ product }) => {
             <button
               className="btn-card card-btn-second"
               onClick={() =>
-                cartWishlistDispatch({
-                  type: "REMOVE_FROM_WISHLIST",
-                  payload: product,
-                })
+                deleteFromWishlistService(
+                  cartWishlistDispatch,
+                  encodedToken,
+                  _id
+                )
               }
             >
               Remove from Wishlist
@@ -58,10 +66,11 @@ const ProductCard = ({ product }) => {
             <button
               className="btn-card card-btn-second"
               onClick={() =>
-                cartWishlistDispatch({
-                  type: "ADD_TO_WISHLIST",
-                  payload: product,
-                })
+                addToWishlistService(
+                  cartWishlistDispatch,
+                  encodedToken,
+                  product
+                )
               }
             >
               Add to Wishlist

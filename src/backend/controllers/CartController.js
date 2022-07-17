@@ -18,7 +18,7 @@ export const getCartItemsHandler = function (schema, request) {
       404,
       {},
       {
-        errors: ["The email you entered is not Registered. Not Found error"],
+        errors: ["The email you entered is not Registered."],
       }
     );
   }
@@ -40,7 +40,7 @@ export const addItemToCartHandler = function (schema, request) {
         404,
         {},
         {
-          errors: ["The email you entered is not Registered. Not Found error"],
+          errors: ["The email you entered is not Registered."],
         }
       );
     }
@@ -78,7 +78,7 @@ export const removeItemFromCartHandler = function (schema, request) {
         404,
         {},
         {
-          errors: ["The email you entered is not Registered. Not Found error"],
+          errors: ["The email you entered is not Registered."],
         }
       );
     }
@@ -120,6 +120,7 @@ export const updateCartItemHandler = function (schema, request) {
     const userCart = schema.users.findBy({ _id: userId }).cart;
     const { action } = JSON.parse(request.requestBody);
     if (action.type === "increment") {
+      console.log("increment me hi");
       userCart.forEach((product) => {
         if (product._id === productId) {
           product.qty += 1;
@@ -135,6 +136,7 @@ export const updateCartItemHandler = function (schema, request) {
       });
     }
     this.db.users.update({ _id: userId }, { cart: userCart });
+    console.log(userCart);
     return new Response(200, {}, { cart: userCart });
   } catch (error) {
     return new Response(

@@ -17,8 +17,8 @@ const authReducer = (state, action) => {
         ...state,
         encodedToken: action.payload.encodedToken,
         userName: action.payload.foundUser.fullName,
-        cart: action.payload.foundUser.cart,
-        wishlist: action.payload.foundUser.wishlist,
+        // cart: action.payload.foundUser.cart,
+        // wishlist: action.payload.foundUser.wishlist,
         loading: false,
         error: "",
       };
@@ -31,8 +31,8 @@ const authReducer = (state, action) => {
         userName: action.payload.createdUser.fullname,
         loading: false,
         error: "",
-        cart: action.payload.createdUser.cart,
-        wishlist: action.payload.createdUser.wishlist,
+        // cart: action.payload.createdUser.cart,
+        // wishlist: action.payload.createdUser.wishlist,
       };
     case LOGOUT:
       localStorage.removeItem("encodedToken");
@@ -43,8 +43,8 @@ const authReducer = (state, action) => {
         userName: "",
         loading: false,
         error: "",
-        cart: [],
-        wishlist: [],
+        // cart: [],
+        // wishlist: [],
       };
     case AUTHERROR:
       return {

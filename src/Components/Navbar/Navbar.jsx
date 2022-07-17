@@ -2,6 +2,7 @@ import logo from "../../asset/_Logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { useProducts, useCartWishlist } from "../../context";
+import { FILTER_BY_GENDER, CLEAR_ALL } from "../../helper/constants";
 
 const Navbar = () => {
   const { productsDispatch } = useProducts();
@@ -12,7 +13,7 @@ const Navbar = () => {
 
   const filterGender = (id) => {
     productsDispatch({
-      type: "FILTER_BY_GENDER",
+      type: FILTER_BY_GENDER,
       payload: id,
     });
     navigate("/product");
@@ -22,10 +23,7 @@ const Navbar = () => {
     <header>
       <nav className="navigation">
         <div className="nav-brand-logo">
-          <NavLink
-            to="/"
-            onClick={() => productsDispatch({ type: "CLEAR_ALL" })}
-          >
+          <NavLink to="/" onClick={() => productsDispatch({ type: CLEAR_ALL })}>
             <img className="nav-img" src={logo} alt="website logo" />
           </NavLink>
         </div>
@@ -34,7 +32,7 @@ const Navbar = () => {
             <li
               className="nav-li"
               onClick={() => {
-                productsDispatch({ type: "CLEAR_ALL" });
+                productsDispatch({ type: CLEAR_ALL });
                 filterGender("men");
               }}
             >
@@ -48,7 +46,7 @@ const Navbar = () => {
             <li
               className="nav-li"
               onClick={() => {
-                productsDispatch({ type: "CLEAR_ALL" });
+                productsDispatch({ type: CLEAR_ALL });
                 filterGender("women");
               }}
             >
@@ -62,7 +60,7 @@ const Navbar = () => {
             <li
               className="nav-li"
               onClick={() => {
-                productsDispatch({ type: "CLEAR_ALL" });
+                productsDispatch({ type: CLEAR_ALL });
                 filterGender("children");
               }}
             >
@@ -89,7 +87,7 @@ const Navbar = () => {
           <ul className="nav-ul">
             <li
               className="nav-li"
-              onClick={() => productsDispatch({ type: "CLEAR_ALL" })}
+              onClick={() => productsDispatch({ type: CLEAR_ALL })}
             >
               <NavLink
                 to="/profile"
@@ -100,7 +98,7 @@ const Navbar = () => {
             </li>
             <li
               className="nav-li"
-              onClick={() => productsDispatch({ type: "CLEAR_ALL" })}
+              onClick={() => productsDispatch({ type: CLEAR_ALL })}
             >
               <NavLink
                 to="/wishlist"
@@ -114,7 +112,7 @@ const Navbar = () => {
             </li>
             <li
               className="nav-li"
-              onClick={() => productsDispatch({ type: "CLEAR_ALL" })}
+              onClick={() => productsDispatch({ type: CLEAR_ALL })}
             >
               <NavLink
                 to="/cart"

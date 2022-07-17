@@ -1,4 +1,4 @@
-import { useCartWishlist } from "../../context/CartWishlistContext";
+import { useCartWishlist } from "../../context";
 import {
   deleteFromWishlistService,
   addToCartService,

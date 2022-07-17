@@ -4,9 +4,7 @@ import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 import { BrowserRouter } from "react-router-dom";
-import { ProductProvider } from "./context/ProductContext";
-import { CartWishlistProvider } from "./context/CartWishlistContext";
-import { AuthProvider } from "./context";
+import { ProductProvider, CartWishlistProvider, AuthProvider } from "./context";
 
 // Call make Server
 makeServer();

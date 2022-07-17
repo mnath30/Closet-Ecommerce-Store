@@ -7,3 +7,10 @@ export { initialState } from "./initialState";
 export { filterByGender } from "./filterByGender";
 export { itemInCartWishlist } from "./itemInCartWishlist";
 export { RequiresAuth } from "./RequiresAuth";
+export {
+  styleCategories,
+  genderCategory,
+  brandings,
+  rating,
+  sortingCategory,
+} from "./categoryData";

@@ -1,6 +1,6 @@
 import { ProductCard, Filter, Footer, ProductNotFound } from "../../Components";
 import "./product.css";
-import { useProducts } from "../../context/ProductContext";
+import { useProducts } from "../../context";
 import {
   compose,
   sorting,

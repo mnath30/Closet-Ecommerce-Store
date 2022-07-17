@@ -1,6 +1,6 @@
 import { emptywishlist } from "../asset";
 import { WishlistCard, EmptyPage } from "../Components";
-import { useCartWishlist } from "../context/CartWishlistContext";
+import { useCartWishlist } from "../context";
 
 const emptydata = {
   source: emptywishlist,

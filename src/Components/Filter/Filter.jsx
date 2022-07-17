@@ -1,44 +1,28 @@
 import "./filter.css";
-import { useProducts } from "../../context/ProductContext";
+import { useProducts } from "../../context";
+import { brandings, rating, sortingCategory } from "../../helper";
+import {
+  FILTER_BY_PRICE,
+  FILTER_BY_BRANDS,
+  RATING,
+  CLEAR_ALL,
+} from "../../helper/constants";
 
 const Filter = () => {
-  const brandings = [
-    { id: "levis", brandname: "Levis" },
-    { id: "dress_berry", brandname: "Dress Berry" },
-    { id: "lee_Cooper", brandname: "Lee Cooper" },
-    { id: "lee", brandname: "Lee" },
-    { id: "raymonds", brandname: "Raymonds" },
-    { id: "jinny_and_jhonny", brandname: "Jinny & Jhonny" },
-    { id: "only", brandname: "Only" },
-    { id: "woodland", brandname: "Woodland" },
-    { id: "reebok", brandname: "Reebok" },
-  ];
-
-  const rating = [
-    { id: "4_STARS_AND_ABOVE", ratinglabel: "4 stars and above" },
-    { id: "3_STARS_AND_ABOVE", ratinglabel: "3 stars and above" },
-    { id: "2_STARS_AND_ABOVE", ratinglabel: "2 stars and above" },
-    { id: "1_STAR_AND_ABOVE", ratinglabel: "1 stars and above" },
-  ];
-
-  const sortingCategory = [
-    { id: "PRICE_HIGH_TO_LOW", categoryname: "Price - High to Low" },
-    { id: "PRICE_LOW_TO_HIGH", categoryname: "Price - Low to High" },
-  ];
-
   const { products, productsDispatch } = useProducts();
 
   return (
     <div className="flex-column">
       <button
         className="btn-link padding-sm"
-        onClick={() => productsDispatch({ type: "CLEAR_ALL" })}
+        onClick={() => productsDispatch({ type: CLEAR_ALL })}
       >
         Clear All Filters
       </button>
       <hr />
       <h3 className="padding-sm">Filters</h3>
       <h3 className="padding-sm">Price Range</h3>
+      <label id="price-selector"></label>
       <input
         className="padding-sm"
         type="range"
@@ -46,8 +30,9 @@ const Filter = () => {
         max="5000"
         step="500"
         value={products.pricerange}
+        id="price-selector"
         onChange={(e) =>
-          productsDispatch({ type: "FILTER_BY_PRICE", payload: e.target.value })
+          productsDispatch({ type: FILTER_BY_PRICE, payload: e.target.value })
         }
       />
       <p className="padding-sm">Price under: {products.pricerange}</p>
@@ -63,7 +48,7 @@ const Filter = () => {
               checked={products.listofbrands.includes(element.brandname)}
               onClick={() =>
                 productsDispatch({
-                  type: "FILTER_BY_BRANDS",
+                  type: FILTER_BY_BRANDS,
                   payload: element.brandname,
                 })
               }
@@ -84,7 +69,7 @@ const Filter = () => {
               name="rating"
               value={element.id}
               onClick={() =>
-                productsDispatch({ type: "RATING", payload: element.id })
+                productsDispatch({ type: RATING, payload: element.id })
               }
               checked={products.rating === element.id}
             />

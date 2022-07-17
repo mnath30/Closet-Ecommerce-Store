@@ -1,7 +1,7 @@
 import "./cart.css";
 import { EmptyPage, TotalPrice, CartCard } from "../../Components";
 import { emptycart } from "../../asset";
-import { useCartWishlist } from "../../context/CartWishlistContext";
+import { useCartWishlist } from "../../context";
 import { useEffect } from "react";
 
 const emptydata = {
@@ -9,12 +9,6 @@ const emptydata = {
   information: "empty-cart",
   message: "Your Cart is Empty",
 };
-
-// const DisplayCart = ({ cartItems }) => {
-//   return (
-
-//   );
-// };
 
 const Cart = () => {
   const { cartWishlist, cartWishlistDispatch } = useCartWishlist();

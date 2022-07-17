@@ -12,7 +12,7 @@ import {
 
 const Product = () => {
   const { products } = useProducts();
-  const { productData } = products;
+  const { gender, productData } = products;
   const updatedProductList = compose(
     filterbrands,
     sorting,
@@ -32,13 +32,11 @@ const Product = () => {
             Showing Products : {updatedProductList.length}
           </h3>
 
-          {/* {products.gender !== null && (
+          {gender !== null && (
             <h3 className="txt-center txt-lg heading">
-              Category:{" "}
-              {products.gender.charAt(0).toUpperCase() +
-                products.gender.slice(1)}
+              Category: {gender.charAt(0).toUpperCase() + gender.slice(1)}
             </h3>
-          )} */}
+          )}
 
           <div className="flex padding-lg">
             {updatedProductList.length === 0 ? (

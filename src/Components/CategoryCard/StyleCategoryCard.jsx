@@ -1,12 +1,15 @@
 import "./category-card.css";
 import { useProducts } from "../../context";
 import { useNavigate } from "react-router-dom";
-import { FILTER_BY_BRANDS } from "../../helper/constants";
+import { CLEAR_ALL, FILTER_BY_BRANDS } from "../../helper/constants";
 
 const StyleCategoryCard = ({ source, information, caption }) => {
   const { productsDispatch } = useProducts();
   const navigate = useNavigate();
   const showFilteredCategory = (title) => {
+    productsDispatch({
+      type: CLEAR_ALL,
+    });
     productsDispatch({
       type: FILTER_BY_BRANDS,
       payload: title,

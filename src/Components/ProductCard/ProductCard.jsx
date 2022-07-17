@@ -1,6 +1,6 @@
 import "./product-card.css";
 import { useCartWishlist } from "../../context";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   addToCartService,
   addToWishlistService,
@@ -10,6 +10,7 @@ import {
 const ProductCard = ({ product }) => {
   const { cartWishlist, cartWishlistDispatch } = useCartWishlist();
   const { source, information, brand, itemname, price, rating, _id } = product;
+  const navigate = useNavigate();
   const isInCart = cartWishlist?.cart.some((element) => element._id === _id);
   const isInWishlist = cartWishlist?.wishlist.some(
     (element) => element._id === _id
@@ -42,9 +43,15 @@ const ProductCard = ({ product }) => {
           ) : (
             <button
               className="btn-card bg-secondary card-btn-main"
-              onClick={() =>
-                addToCartService(cartWishlistDispatch, encodedToken, product)
-              }
+              onClick={() => {
+                encodedToken
+                  ? addToCartService(
+                      cartWishlistDispatch,
+                      encodedToken,
+                      product
+                    )
+                  : navigate("/login");
+              }}
             >
               Add to Cart
             </button>
@@ -65,13 +72,15 @@ const ProductCard = ({ product }) => {
           ) : (
             <button
               className="btn-card card-btn-second"
-              onClick={() =>
-                addToWishlistService(
-                  cartWishlistDispatch,
-                  encodedToken,
-                  product
-                )
-              }
+              onClick={() => {
+                encodedToken
+                  ? addToWishlistService(
+                      cartWishlistDispatch,
+                      encodedToken,
+                      product
+                    )
+                  : navigate("/login");
+              }}
             >
               Add to Wishlist
             </button>

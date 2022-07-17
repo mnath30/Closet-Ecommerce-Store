@@ -1,12 +1,15 @@
 import "./category-card.css";
 import { useProducts } from "../../context";
 import { useNavigate } from "react-router-dom";
-import { FILTER_BY_GENDER } from "../../helper/constants";
+import { CLEAR_ALL, FILTER_BY_GENDER } from "../../helper/constants";
 
 const GenderCategoryCard = ({ source, information, caption, id }) => {
   const { productsDispatch } = useProducts();
   const navigate = useNavigate();
   const filterGender = (id) => {
+    productsDispatch({
+      type: CLEAR_ALL,
+    });
     productsDispatch({
       type: FILTER_BY_GENDER,
       payload: id,

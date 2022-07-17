@@ -1,5 +1,5 @@
 import { emptywishlist } from "../asset";
-import { WishlistCard, EmptyPage } from "../Components";
+import { WishlistCard, EmptyPage, Loader } from "../Components";
 import { useCartWishlist } from "../context";
 
 const emptydata = {
@@ -10,19 +10,28 @@ const emptydata = {
 
 const Wishlist = () => {
   const { cartWishlist } = useCartWishlist();
-  const { wishlist } = cartWishlist;
+  const { wishlist, wishlistLoading } = cartWishlist;
   return (
     <>
-      <h4 className="heading-h4 txt-center padding-md">My Wishlist</h4>
-      <div className="flex padding-lg">
-        {wishlist.length === 0 ? (
-          <EmptyPage item={emptydata} />
-        ) : (
-          wishlist.map((element) => (
-            <WishlistCard key={element._id} item={element} />
-          ))
-        )}
-      </div>
+      {wishlistLoading && (
+        <div className="flex loader_container">
+          <Loader />
+        </div>
+      )}
+      {!wishlistLoading && (
+        <>
+          <h4 className="heading-h4 txt-center padding-md">My Wishlist</h4>
+          <div className="flex padding-lg">
+            {wishlist.length === 0 ? (
+              <EmptyPage item={emptydata} />
+            ) : (
+              wishlist.map((element) => (
+                <WishlistCard key={element._id} item={element} />
+              ))
+            )}
+          </div>
+        </>
+      )}
     </>
   );
 };

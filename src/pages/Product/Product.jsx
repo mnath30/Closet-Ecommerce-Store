@@ -1,9 +1,26 @@
 import { ProductCard, Filter, Footer, ProductNotFound } from "../../Components";
 import "./product.css";
-import { useProducts } from "../../context/ProductContext";
+import { useProducts } from "../../context";
+import {
+  compose,
+  sorting,
+  filterByRating,
+  filterByPrice,
+  filterbrands,
+  filterByGender,
+} from "../../helper";
 
 const Product = () => {
-  const { products, updatedProductList } = useProducts();
+  const { products } = useProducts();
+  const { gender, productData } = products;
+  const updatedProductList = compose(
+    filterbrands,
+    sorting,
+    filterByRating,
+    filterByPrice,
+    filterByGender
+  )(products, [...productData]);
+
   return (
     <>
       <div className="product-grid padding-lg">
@@ -15,11 +32,9 @@ const Product = () => {
             Showing Products : {updatedProductList.length}
           </h3>
 
-          {products.gender !== null && (
+          {gender !== null && (
             <h3 className="txt-center txt-lg heading">
-              Category:{" "}
-              {products.gender.charAt(0).toUpperCase() +
-                products.gender.slice(1)}
+              Category: {gender.charAt(0).toUpperCase() + gender.slice(1)}
             </h3>
           )}
 
@@ -27,8 +42,8 @@ const Product = () => {
             {updatedProductList.length === 0 ? (
               <ProductNotFound />
             ) : (
-              updatedProductList?.map((ele) => (
-                <ProductCard key={ele._id} product={ele} />
+              updatedProductList?.map((item) => (
+                <ProductCard key={item._id} product={item} />
               ))
             )}
           </div>

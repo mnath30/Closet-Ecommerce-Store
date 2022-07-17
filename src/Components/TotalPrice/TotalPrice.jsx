@@ -1,4 +1,4 @@
-import { useCartWishlist } from "../../context/CartWishlistContext";
+import { useCartWishlist } from "../../context";
 import "./total-price.css";
 
 const TotalPrice = ({ discount = 200, deliverycharges = 100 }) => {

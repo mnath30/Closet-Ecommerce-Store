@@ -1,41 +1,47 @@
-@import url('./utils.css');
-@import url('./variables.css');
+@import url("./utils.css");
+@import url("./variables.css");
 
 /* Common styles for the app */
 
 /* Button */
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .main-btn {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 .btn-card:hover {
-    background-color: var(--secondary-color);
-    opacity:0.8;
+  background-color: var(--secondary-color);
+  opacity: 0.8;
 }
 
 /* Card image container */
 .card-img {
-    border-radius: 8px;
-    height: 20rem; 
-    overflow: hidden;
-    width: 15rem;
+  border-radius: 8px;
+  height: 20rem;
+  overflow: hidden;
+  width: 15rem;
 }
 .category-section .card-horiz {
-    max-height: unset;
+  max-height: unset;
 }
 
 /* Image inside card */
 .responsive-img {
-    width: 100%;
-    height: 100%;
-    padding:0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
 }
 .inline-block-elem {
-    display: inline-block;
+  display: inline-block;
 }
 .card .square-card {
-    height: fit-content;
+  height: fit-content;
 }
 
+/* Loader container */
+.loader_container {
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}

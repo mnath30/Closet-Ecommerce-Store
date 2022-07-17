@@ -15,9 +15,11 @@
 .product-filter {
   grid-area: product-filter;
   position: sticky;
-  top: 6rem;
-  align-self: start;
+  top: 5rem;
+  align-self: flex-start;
   text-align: left;
+  overflow: auto;
+  height: 80vh;
 }
 
 .main-product-page {

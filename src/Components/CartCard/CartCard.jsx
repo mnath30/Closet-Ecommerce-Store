@@ -1,9 +1,18 @@
 import "./cart-card.css";
-import { useCartWishlist } from "../../context/CartWishlistContext";
+import { useCartWishlist } from "../../context";
+import {
+  changeCartQuantityService,
+  addToWishlistService,
+  deleteFromCartService,
+} from "../../services";
+import { itemInCartWishlist } from "../../helper";
 
 const CartCard = ({ item }) => {
-  const { cartWishlistDispatch } = useCartWishlist();
-  const { itemname, brand, qty, information, price, source } = item;
+  const { cartWishlist, cartWishlistDispatch } = useCartWishlist();
+  const { wishlist } = cartWishlist;
+  const { itemname, brand, qty, information, price, source, _id } = item;
+  const encodedToken = localStorage.getItem("encodedToken");
+
   return (
     <div className="card cart-card card-horiz">
       <div className="card-img-horiz">
@@ -13,15 +22,20 @@ const CartCard = ({ item }) => {
         <h5 className="card-header">{brand}</h5>
         <p className="card-para">
           {itemname}
-
-          <div>Rs. {price}</div>
+          <p>Rs. {price}</p>
         </p>
         <div className="qty padding-sm">
           Quantity:
           <button
             className="rounded-btn"
             onClick={() =>
-              cartWishlistDispatch({ type: "DECREASE_QTY", payload: item })
+              qty > 0 &&
+              changeCartQuantityService(
+                cartWishlistDispatch,
+                encodedToken,
+                { type: "decrement" },
+                _id
+              )
             }
           >
             -
@@ -30,7 +44,12 @@ const CartCard = ({ item }) => {
           <button
             className="rounded-btn"
             onClick={() =>
-              cartWishlistDispatch({ type: "INCREASE_QTY", payload: item })
+              changeCartQuantityService(
+                cartWishlistDispatch,
+                encodedToken,
+                { type: "increment" },
+                _id
+              )
             }
           >
             +
@@ -39,16 +58,18 @@ const CartCard = ({ item }) => {
         <div className="card-horiz-btn">
           <button
             className="btn-card cart-main-btn"
-            onClick={() =>
-              cartWishlistDispatch({ type: "MOVE_TO_WISHLIST", payload: item })
-            }
+            onClick={() => {
+              !itemInCartWishlist(_id, wishlist) &&
+                addToWishlistService(cartWishlistDispatch, encodedToken, item);
+              deleteFromCartService(cartWishlistDispatch, encodedToken, _id);
+            }}
           >
-            Add to Wishlist
+            Move to Wishlist
           </button>
           <button
             className="btn-card btn-card-second"
             onClick={() =>
-              cartWishlistDispatch({ type: "REMOVE_FROM_CART", payload: item })
+              deleteFromCartService(cartWishlistDispatch, encodedToken, _id)
             }
           >
             Remove from Cart

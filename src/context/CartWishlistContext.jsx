@@ -1,18 +1,32 @@
-import { createContext,useContext } from "react";
-import { cartWishlistInitialState  } from "../helper";
+import { createContext, useContext } from "react";
 import { useReducer } from "react";
-import { cartWishlistReducer } from "../reducer/cartWishlistReducer";
+import { cartWishlistReducer } from "../reducer";
 
-const CartWishlistContext=createContext({cart:[],wishlist:[]})
-const useCartWishlist=()=>useContext(CartWishlistContext);
+const initialState = {
+  cart: [],
+  cartLoading: false,
+  cartError: "",
+  wishlist: [],
+  wishlistLoading: false,
+  wishlistError: "",
+  totalPrice: 0,
+};
 
-const CartWishlistProvider=({children})=>{
-  const [cartWishlist,cartWishlistDispatch]=useReducer(cartWishlistReducer,cartWishlistInitialState)
-      return(
-        <CartWishlistContext.Provider value={{ cartWishlist,cartWishlistDispatch }}>
-          {children}
-        </CartWishlistContext.Provider>       
-      )
-}
+const CartWishlistContext = createContext(initialState);
+const useCartWishlist = () => useContext(CartWishlistContext);
 
-export { CartWishlistProvider,useCartWishlist }
+const CartWishlistProvider = ({ children }) => {
+  const [cartWishlist, cartWishlistDispatch] = useReducer(
+    cartWishlistReducer,
+    initialState
+  );
+  return (
+    <CartWishlistContext.Provider
+      value={{ cartWishlist, cartWishlistDispatch }}
+    >
+      {children}
+    </CartWishlistContext.Provider>
+  );
+};
+
+export { CartWishlistProvider, useCartWishlist };

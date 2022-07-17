@@ -11,7 +11,7 @@ import {
   Logout,
 } from "../pages";
 import Mockman from "mockman-js";
-import { RequiresAuth } from "../helper/RequiresAuth";
+import { RequiresAuth } from "../helper";
 
 const Router = () => {
   return (

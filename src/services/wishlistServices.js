@@ -42,12 +42,10 @@ const deleteFromWishlistService = async (dispatch, token, productId) => {
     const response = await axios.delete(`/api/user/wishlist/${productId}`, {
       headers: { authorization: token },
     });
-    console.log(response);
     if (response.status === 200) {
       dispatch({ type: DELETE_FROM_WISHLIST, payload: response.data.wishlist });
     }
   } catch (error) {
-    console.log(error);
     dispatch({ type: WISHLIST_ERROR, payload: error });
   }
 };

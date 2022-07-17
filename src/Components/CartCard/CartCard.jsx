@@ -29,6 +29,7 @@ const CartCard = ({ item }) => {
           <button
             className="rounded-btn"
             onClick={() =>
+              qty > 0 &&
               changeCartQuantityService(
                 cartWishlistDispatch,
                 encodedToken,

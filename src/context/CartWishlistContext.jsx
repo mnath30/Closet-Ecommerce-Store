@@ -1,5 +1,4 @@
 import { createContext, useContext } from "react";
-// import { cartWishlistInitialState } from "../helper";
 import { useReducer } from "react";
 import { cartWishlistReducer } from "../reducer/cartWishlistReducer";
 
@@ -10,6 +9,7 @@ const initialState = {
   wishlist: [],
   wishlistLoading: false,
   wishlistError: "",
+  totalPrice: 0,
 };
 
 const CartWishlistContext = createContext(initialState);

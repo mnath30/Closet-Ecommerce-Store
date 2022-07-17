@@ -25,19 +25,15 @@ const getCartService = async (dispatch, token) => {
 
 const addToCartService = async (dispatch, token, product) => {
   try {
-    console.log(product, dispatch, token);
     const response = await axios.post(
       "/api/user/cart",
       { product },
       { headers: { authorization: token } }
     );
-    console.log(response);
     if (response.status === 201) {
-      console.log(response);
       dispatch({ type: ADD_TO_CART, payload: response.data.cart });
     }
   } catch (error) {
-    console.log(error);
     dispatch({ type: "CART_ERROR", payload: error });
   }
 };
@@ -63,19 +59,16 @@ const changeCartQuantityService = async (
   productId
 ) => {
   try {
-    console.log(action, productId);
     dispatch({ type: CART_LOADING });
     const response = await axios.post(
       `/api/user/cart/${productId}`,
       { action },
       { headers: { authorization: token } }
     );
-    console.log(response);
     if (response.status === 200) {
       dispatch({ type: CHANGE_CART_QUANTITY, payload: response.data.cart });
     }
   } catch (error) {
-    console.log(error);
     dispatch({ type: CART_ERROR, payload: error });
   }
 };

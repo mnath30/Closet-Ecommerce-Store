@@ -1,29 +1,14 @@
-import { Navbar } from "./Navbar/Navbar";
-import { BannerImage } from "./BannerImage/BannerImage";
-import { GenderCategoryCard } from "./CategoryCard/GenderCategoryCard";
-import { StyleCategoryCard } from "./CategoryCard/StyleCategoryCard";
-import { Footer } from "./Footer/Footer";
-import { Filter } from "./Filter/Filter";
-import { ProductCard } from "./ProductCard/ProductCard";
-import { ProductNotFound } from "./ProductNotFound/ProductNotFound";
-import { WishlistCard } from "./WishlistCard/WishlistCard";
-import { CartCard } from "./CartCard/CartCard";
-import { TotalPrice } from "./TotalPrice/TotalPrice";
-import { EmptyPage } from "./EmptyPage/EmptyPage";
-import { Loader } from "./Loader/Loader";
-
-export {
-  Navbar,
-  BannerImage,
-  GenderCategoryCard,
-  StyleCategoryCard,
-  Footer,
-  Filter,
-  ProductCard,
-  ProductNotFound,
-  WishlistCard,
-  CartCard,
-  TotalPrice,
-  EmptyPage,
-  Loader,
-};
+export { Navbar } from "./Navbar/Navbar";
+export { BannerImage } from "./BannerImage/BannerImage";
+export { GenderCategoryCard } from "./CategoryCard/GenderCategoryCard";
+export { StyleCategoryCard } from "./CategoryCard/StyleCategoryCard";
+export { Footer } from "./Footer/Footer";
+export { Filter } from "./Filter/Filter";
+export { ProductCard } from "./ProductCard/ProductCard";
+export { ProductNotFound } from "./ProductNotFound/ProductNotFound";
+export { WishlistCard } from "./WishlistCard/WishlistCard";
+export { CartCard } from "./CartCard/CartCard";
+export { TotalPrice } from "./TotalPrice/TotalPrice";
+export { EmptyPage } from "./EmptyPage/EmptyPage";
+export { Loader } from "./Loader/Loader";
+export { SingleProductDetail } from "./SingleProductDetail/SingleProductDetail";

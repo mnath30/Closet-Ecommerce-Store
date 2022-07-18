@@ -1,11 +1,10 @@
-import { Home } from "./Home";
-import { Product } from "./Product/Product";
-import { Profile } from "./Profile";
-import { Wishlist } from "./Wishlist";
-import { Cart } from "./Cart/Cart";
-import { Error } from "./Error/Error";
-import { Login } from "./Authentication/Login";
-import { Signup } from "./Authentication/Signup";
-import { Logout } from "./Authentication/Logout";
-
-export { Home, Product, Profile, Wishlist, Cart, Error, Login, Signup, Logout };
+export { Home } from "./Home";
+export { Product } from "./Product/Product";
+export { SingleProduct } from "./SingleProduct/SingleProduct";
+export { Profile } from "./Profile";
+export { Wishlist } from "./Wishlist";
+export { Cart } from "./Cart/Cart";
+export { Error } from "./Error/Error";
+export { Login } from "./Authentication/Login";
+export { Signup } from "./Authentication/Signup";
+export { Logout } from "./Authentication/Logout";

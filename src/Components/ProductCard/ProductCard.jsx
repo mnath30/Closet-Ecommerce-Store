@@ -20,10 +20,12 @@ const ProductCard = ({ product }) => {
   return (
     <div className="card card-vert ">
       <div className="card-img card-header-with-badge">
-        <img className="responsive-img" src={source} alt={information} />
+        <Link to={`/product/${_id}`} className="pointer">
+          <img className="responsive-img" src={source} alt={information} />
+        </Link>
         <span className="card-badge card-bottom-left-badge">
           {rating}
-          <i className="fas fa-star text-danger"></i>
+          <i className="fas fa-star"></i>
         </span>
       </div>
       <div className="card-body">

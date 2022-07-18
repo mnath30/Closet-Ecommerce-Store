@@ -45,3 +45,18 @@ button:hover {
   justify-content: center;
   min-height: 100vh;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.hr {
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+}

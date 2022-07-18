@@ -1,9 +1,24 @@
-@import url('../../style/style.css');
+@import url("../../style/style.css");
 
 .card-btn-main {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border: 2px solid var(--secondary-color);
 }
 .card-btn-second {
-    border: 2px solid var(--secondary-color);
-    background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  background-color: transparent;
+}
+
+.singleproduct__btn_section {
+  margin: auto;
+}
+
+.singleproduct__btn {
+  width: 12rem;
+  padding: 0.6rem 0.8rem;
+}
+
+.fa-star {
+  color: var(--txt-green);
 }

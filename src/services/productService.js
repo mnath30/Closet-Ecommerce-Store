@@ -16,7 +16,10 @@ const getAllProductService = async (dispatch) => {
       dispatch({ type: GET_ALL_PRODUCTS, payload: response.data.products });
     }
   } catch (error) {
-    dispatch({ type: PRODUCT_ERROR, payload: error });
+    dispatch({
+      type: PRODUCT_ERROR,
+      payload: "There was some error in processing your request",
+    });
   }
 };
 
@@ -25,10 +28,20 @@ const getSingleProductService = async (dispatch, productId) => {
     dispatch({ type: GET_SINGLE_PRODUCT_LOADING });
     const response = await axios.get(`/api/products/${productId}`);
     if (response.status === 200) {
-      dispatch({ type: GET_SINGLE_PRODUCT, payload: response.data.product });
+      if (response.data.product !== null) {
+        dispatch({ type: GET_SINGLE_PRODUCT, payload: response.data.product });
+      } else {
+        dispatch({
+          type: GET_SINGLE_PRODUCT_ERROR,
+          payload: "There was some error in processing your request",
+        });
+      }
     }
   } catch (error) {
-    dispatch({ type: GET_SINGLE_PRODUCT_ERROR, payload: error });
+    dispatch({
+      type: GET_SINGLE_PRODUCT_ERROR,
+      payload: "There was some error in processing your request",
+    });
   }
 };
 

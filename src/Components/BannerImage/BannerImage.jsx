@@ -5,12 +5,12 @@ import { CLEAR_ALL } from "../../helper/constants";
 import { useProducts } from "../../context";
 
 const BannerImage = () => {
-  const { productDispatch } = useProducts();
+  const { productsDispatch } = useProducts();
 
   return (
     <div className="main-image">
       <img className="responsive-img" src={img01} alt="closet-of-clothes" />
-      <Link to="/product" onClick={() => productDispatch({ type: CLEAR_ALL })}>
+      <Link to="/product" onClick={() => productsDispatch({ type: CLEAR_ALL })}>
         <div className="main-image-text">
           <p>
             Best Deals

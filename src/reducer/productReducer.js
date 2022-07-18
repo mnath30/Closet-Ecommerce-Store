@@ -11,6 +11,7 @@ import {
   GET_SINGLE_PRODUCT,
   GET_SINGLE_PRODUCT_LOADING,
   GET_SINGLE_PRODUCT_ERROR,
+  SEARCH,
 } from "../helper/constants";
 
 const productReducer = (state, action) => {
@@ -57,7 +58,10 @@ const productReducer = (state, action) => {
       return { ...state, sorting: action.payload };
 
     case FILTER_BY_GENDER:
-      return { ...state, gender: action.payload };
+      return { ...initialState, gender: action.payload };
+
+    case SEARCH:
+      return { ...initialState, search: action.payload };
 
     case CLEAR_ALL:
       return { ...initialState };

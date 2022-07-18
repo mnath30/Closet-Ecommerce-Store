@@ -2,7 +2,8 @@ import logo from "../../asset/_Logo.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { useProducts, useCartWishlist } from "../../context";
-import { FILTER_BY_GENDER, CLEAR_ALL } from "../../helper/constants";
+import { FILTER_BY_GENDER, CLEAR_ALL, SEARCH } from "../../helper/constants";
+import { useState } from "react";
 
 const Navbar = () => {
   const { productsDispatch } = useProducts();
@@ -10,6 +11,7 @@ const Navbar = () => {
   const { wishlist, cart } = cartWishlist;
   const navigate = useNavigate();
   const encodedToken = localStorage.getItem("encodedToken");
+  const [searchText, setSearchText] = useState("");
 
   const filterGender = (id) => {
     productsDispatch({
@@ -77,9 +79,21 @@ const Navbar = () => {
           <input
             className="nav-search-input"
             type="text"
-            placeholder="Search..."
+            placeholder="Search for products and brands"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
           />
-          <button className="nav-search-btn">
+          <button
+            className="nav-search-btn"
+            onClick={() => {
+              productsDispatch({
+                type: SEARCH,
+                payload: searchText,
+              });
+              setSearchText("");
+              navigate("/product");
+            }}
+          >
             <i className="fas fa-search"></i>
           </button>
         </div>

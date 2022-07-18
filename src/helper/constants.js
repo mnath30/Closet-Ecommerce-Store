@@ -38,3 +38,4 @@ export const PRICE_HIGH_TO_LOW = "PRICE_HIGH_TO_LOW";
 export const PRICE_LOW_TO_HIGH = "PRICE_LOW_TO_HIGH";
 export const FILTER_BY_GENDER = "FILTER_BY_GENDER";
 export const CLEAR_ALL = "CLEAR_ALL";
+export const SEARCH = "SEARCH";

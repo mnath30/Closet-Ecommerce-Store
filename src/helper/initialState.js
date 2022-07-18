@@ -9,6 +9,7 @@ const initialState = {
   currentProduct: {},
   currentProductLoading: false,
   currentProductError: "",
+  search: "",
 };
 
 export { initialState };

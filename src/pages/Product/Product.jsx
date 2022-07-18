@@ -8,6 +8,7 @@ import {
   filterByPrice,
   filterbrands,
   filterByGender,
+  searchProducts,
 } from "../../helper";
 import { useMobileFilter } from "../../hooks/useMobileFilter";
 
@@ -15,7 +16,9 @@ const Product = () => {
   const { products } = useProducts();
   const { gender, productData } = products;
   const { displayFilter, closeFilter, openFilter } = useMobileFilter();
+
   const updatedProductList = compose(
+    searchProducts,
     filterbrands,
     sorting,
     filterByRating,

@@ -8,11 +8,11 @@ import {
   CLEAR_ALL,
 } from "../../helper/constants";
 
-const Filter = () => {
+const Filter = ({ filterStyle = "", clickHandler }) => {
   const { products, productsDispatch } = useProducts();
 
   return (
-    <div className="flex-column">
+    <div className={`flex-column ${filterStyle}`} onClick={clickHandler}>
       <button
         className="btn-link padding-sm"
         onClick={() => productsDispatch({ type: CLEAR_ALL })}

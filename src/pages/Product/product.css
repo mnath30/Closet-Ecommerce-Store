@@ -20,14 +20,54 @@
   text-align: left;
   overflow: auto;
   height: 80vh;
+  width: 12rem;
 }
 
 .main-product-page {
   grid-area: main-product;
 }
 
-@media only screen and (max-width: 520px) {
+.mobilefilter-btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  color: var(--white);
+  background-color: var(--secondary-color);
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 1.2rem;
+  display: none;
+}
+
+.mobile-overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.mobile-filter {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 14rem;
+  text-align: left;
+  font-size: 1.2rem;
+  overflow: scroll;
+  padding: 0.8rem;
+}
+
+@media only screen and (max-width: 600px) {
   .product-filter {
     display: none;
+  }
+
+  .mobilefilter-btn {
+    display: initial;
   }
 }

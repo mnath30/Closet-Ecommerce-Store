@@ -12,4 +12,13 @@ const initialState = {
   search: "",
 };
 
-export { initialState };
+const initialAddress = {
+  fullname: "",
+  mobile: "",
+  locality: "",
+  pincode: "",
+  city: "",
+  state: "",
+};
+
+export { initialState, initialAddress };

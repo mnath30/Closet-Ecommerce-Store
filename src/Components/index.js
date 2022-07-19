@@ -12,3 +12,6 @@ export { TotalPrice } from "./TotalPrice/TotalPrice";
 export { EmptyPage } from "./EmptyPage/EmptyPage";
 export { Loader } from "./Loader/Loader";
 export { SingleProductDetail } from "./SingleProductDetail/SingleProductDetail";
+export { AddressCard } from "./AddressCard/AddressCard";
+export { Modal } from "./Modal/Modal";
+export { AddressModal } from "./Modal/AddressModal";

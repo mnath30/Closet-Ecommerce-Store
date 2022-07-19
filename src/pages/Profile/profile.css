@@ -1,0 +1,40 @@
+.profile-name {
+  padding: 0.8rem 1.4rem;
+}
+
+.profile-name {
+  display: inline;
+}
+
+.profile-btn {
+  margin-left: auto;
+  padding: 0.4rem;
+  height: 2rem;
+}
+
+.btn-logout {
+  background-color: var(--border-color);
+}
+
+.profile-info,
+.profile-address-header {
+  display: flex;
+  width: 60%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 770px) {
+  .profile-info,
+  .profile-address-header {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .profile-info,
+  .profile-address-header {
+    width: 100%;
+  }
+}

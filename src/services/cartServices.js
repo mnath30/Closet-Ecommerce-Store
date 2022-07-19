@@ -34,7 +34,7 @@ const addToCartService = async (dispatch, token, product) => {
       dispatch({ type: ADD_TO_CART, payload: response.data.cart });
     }
   } catch (error) {
-    dispatch({ type: "CART_ERROR", payload: error });
+    dispatch({ type: CART_ERROR, payload: error });
   }
 };
 

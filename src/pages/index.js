@@ -1,7 +1,7 @@
 export { Home } from "./Home";
 export { Product } from "./Product/Product";
 export { SingleProduct } from "./SingleProduct/SingleProduct";
-export { Profile } from "./Profile";
+export { Profile } from "./Profile/Profile";
 export { Wishlist } from "./Wishlist";
 export { Cart } from "./Cart/Cart";
 export { Error } from "./Error/Error";

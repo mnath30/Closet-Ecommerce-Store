@@ -10,7 +10,7 @@ import {
   filterByGender,
   searchProducts,
 } from "../../helper";
-import { useMobileFilter } from "../../hooks/useMobileFilter";
+import { useMobileFilter } from "../../hooks";
 
 const Product = () => {
   const { products } = useProducts();

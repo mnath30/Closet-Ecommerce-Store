@@ -14,3 +14,9 @@ export {
   addToWishlistService,
   deleteFromWishlistService,
 } from "./wishlistServices";
+export {
+  getAddressService,
+  addAddressService,
+  deleteAddressService,
+  updateAddressService,
+} from "./addressServices";

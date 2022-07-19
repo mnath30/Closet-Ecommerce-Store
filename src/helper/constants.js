@@ -39,3 +39,12 @@ export const PRICE_LOW_TO_HIGH = "PRICE_LOW_TO_HIGH";
 export const FILTER_BY_GENDER = "FILTER_BY_GENDER";
 export const CLEAR_ALL = "CLEAR_ALL";
 export const SEARCH = "SEARCH";
+
+// Address Constants
+export const ADDRESS_ERROR = "ADDRESS_ERROR";
+export const ADDRESS_LOADING = "ADDRESS_LOADING";
+export const GET_ADDRESS = "GET_ADDRESS";
+export const DELETE_ADDRESS = "DELETE_ADDRESS";
+export const UPDATE_ADDRESS = "UPDATE_ADDRESS";
+export const ADD_ADDRESS = "ADD_ADDRESS";
+export const CURRENT_UPDATING_ADDRESS = "CURRENT_UPDATING_ADDRESS";

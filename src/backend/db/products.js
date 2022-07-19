@@ -18,6 +18,8 @@ export const products = [
     price: 1500,
     source: img10,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -30,6 +32,8 @@ export const products = [
     price: 1900,
     source: img9,
     isOutOfStock: true,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -42,6 +46,8 @@ export const products = [
     price: 1900,
     source: img9,
     isOutOfStock: true,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -54,6 +60,8 @@ export const products = [
     price: 1000,
     source: img10,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -66,6 +74,8 @@ export const products = [
     price: 2500,
     source: img9,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -78,6 +88,8 @@ export const products = [
     price: 500,
     source: img10,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -90,6 +102,8 @@ export const products = [
     price: 4500,
     source: img9,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -102,6 +116,8 @@ export const products = [
     price: 5000,
     source: img10,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -114,6 +130,8 @@ export const products = [
     price: 1000,
     source: img9,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -126,6 +144,8 @@ export const products = [
     price: 900,
     source: img9,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -138,6 +158,8 @@ export const products = [
     price: 2500,
     source: img10,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -150,6 +172,8 @@ export const products = [
     price: 2500,
     source: img10,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
   {
     _id: uuid(),
@@ -162,5 +186,7 @@ export const products = [
     price: 3500,
     source: img10,
     isOutOfStock: false,
+    description:
+      "Cropped top in sequined mesh. Relaxed fit with dropped shoulders and elbow-length sleeves. Lined.",
   },
 ];

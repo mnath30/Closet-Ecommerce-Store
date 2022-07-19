@@ -8,12 +8,34 @@ import {
   PRICE_LOW_TO_HIGH,
   FILTER_BY_GENDER,
   CLEAR_ALL,
+  GET_SINGLE_PRODUCT,
+  GET_SINGLE_PRODUCT_LOADING,
+  GET_SINGLE_PRODUCT_ERROR,
+  SEARCH,
 } from "../helper/constants";
 
-const filterReducer = (state, action) => {
+const productReducer = (state, action) => {
   switch (action.type) {
     case GET_ALL_PRODUCTS:
       return { ...state, productData: action.payload };
+
+    case GET_SINGLE_PRODUCT_LOADING:
+      return { ...state, currentProductLoading: true };
+
+    case GET_SINGLE_PRODUCT:
+      return {
+        ...state,
+        currentProductLoading: false,
+        currentProduct: { ...action.payload },
+        currentProductError: "",
+      };
+
+    case GET_SINGLE_PRODUCT_ERROR:
+      return {
+        ...state,
+        currentProductLoading: false,
+        currentProductError: action.payload,
+      };
 
     case FILTER_BY_PRICE:
       return { ...state, pricerange: action.payload };
@@ -36,7 +58,10 @@ const filterReducer = (state, action) => {
       return { ...state, sorting: action.payload };
 
     case FILTER_BY_GENDER:
-      return { ...state, gender: action.payload };
+      return { ...initialState, gender: action.payload };
+
+    case SEARCH:
+      return { ...initialState, search: action.payload };
 
     case CLEAR_ALL:
       return { ...initialState };
@@ -46,4 +71,4 @@ const filterReducer = (state, action) => {
   }
 };
 
-export { filterReducer };
+export { productReducer };

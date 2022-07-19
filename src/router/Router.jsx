@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import {
   Home,
   Product,
+  SingleProduct,
   Profile,
   Wishlist,
   Cart,
@@ -18,6 +19,7 @@ const Router = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="product" element={<Product />} />
+      <Route path="product/:productId" element={<SingleProduct />} />
       <Route
         path="profile"
         element={

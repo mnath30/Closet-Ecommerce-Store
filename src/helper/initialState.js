@@ -6,6 +6,10 @@ const initialState = {
   productData: [],
   listofbrands: [],
   gender: null,
+  currentProduct: {},
+  currentProductLoading: false,
+  currentProductError: "",
+  search: "",
 };
 
 export { initialState };

@@ -8,12 +8,17 @@ import {
   filterByPrice,
   filterbrands,
   filterByGender,
+  searchProducts,
 } from "../../helper";
+import { useMobileFilter } from "../../hooks/useMobileFilter";
 
 const Product = () => {
   const { products } = useProducts();
   const { gender, productData } = products;
+  const { displayFilter, closeFilter, openFilter } = useMobileFilter();
+
   const updatedProductList = compose(
+    searchProducts,
     filterbrands,
     sorting,
     filterByRating,
@@ -49,7 +54,18 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <button className="mobilefilter-btn" onClick={openFilter}>
+        <i className="fas fa-filter"></i>
+      </button>
       <Footer />
+      {displayFilter && (
+        <div className="mobile-overlay" onClick={closeFilter}>
+          <Filter
+            filterStyle="mobile-filter"
+            clickHandler={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </>
   );
 };

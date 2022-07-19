@@ -14,16 +14,13 @@
 .address_btn_section {
   width: 100%;
   border-top: 1px solid var(--border-color);
-  /* text-align: center; */
   margin-top: 0.8rem;
-  /* background-color: inherit; */
 }
 
 .address_btn {
   width: 46%;
   font-size: 0.8rem;
   border: none;
-  /* padding: 1.8rem; */
 }
 
 .separator {

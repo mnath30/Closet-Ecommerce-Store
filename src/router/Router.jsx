@@ -46,14 +46,7 @@ const Router = () => {
       />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
-      <Route
-        path="logout"
-        element={
-          <RequiresAuth>
-            <Logout />
-          </RequiresAuth>
-        }
-      />
+      <Route path="logout" element={<Logout />} />
       <Route path="*" element={<Error />} />
       <Route path="mockman" element={<Mockman />} />
     </Routes>

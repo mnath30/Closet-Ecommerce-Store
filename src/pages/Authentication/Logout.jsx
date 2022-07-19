@@ -21,6 +21,7 @@ const Logout = () => {
   const clickHandler = () => {
     navigate("/");
   };
+
   return (
     <div className="auth-main">
       {loading && <Loader />}

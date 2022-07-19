@@ -1,0 +1,44 @@
+.address_card {
+  max-width: 50%;
+  text-align: left;
+  padding: 0.8rem;
+  font-size: 1rem;
+  word-wrap: break-word;
+  margin: 0.8rem auto;
+}
+
+.address_name {
+  padding: 0.8rem 0;
+}
+
+.address_btn_section {
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  /* text-align: center; */
+  margin-top: 0.8rem;
+  /* background-color: inherit; */
+}
+
+.address_btn {
+  width: 46%;
+  font-size: 0.8rem;
+  border: none;
+  /* padding: 1.8rem; */
+}
+
+.separator {
+  border-left: 1px solid var(--border-color);
+}
+
+@media only screen and (max-width: 770px) {
+  .address_card {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .address_card {
+    max-width: 100%;
+    margin: 0.8rem;
+  }
+}

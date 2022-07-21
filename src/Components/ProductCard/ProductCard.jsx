@@ -16,6 +16,7 @@ const ProductCard = ({ product }) => {
     (element) => element._id === _id
   );
   const encodedToken = localStorage.getItem("encodedToken");
+  const userName = localStorage.getItem("username");
 
   return (
     <div className="card card-vert ">
@@ -46,7 +47,7 @@ const ProductCard = ({ product }) => {
             <button
               className="btn-card bg-secondary card-btn-main"
               onClick={() => {
-                encodedToken
+                encodedToken && userName
                   ? addToCartService(
                       cartWishlistDispatch,
                       encodedToken,
@@ -75,7 +76,7 @@ const ProductCard = ({ product }) => {
             <button
               className="btn-card card-btn-second"
               onClick={() => {
-                encodedToken
+                encodedToken && userName
                   ? addToWishlistService(
                       cartWishlistDispatch,
                       encodedToken,

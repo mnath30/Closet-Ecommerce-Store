@@ -11,6 +11,7 @@ const Navbar = () => {
   const { wishlist, cart } = cartWishlist;
   const navigate = useNavigate();
   const encodedToken = localStorage.getItem("encodedToken");
+  const userName = localStorage.getItem("username");
   const [searchText, setSearchText] = useState("");
 
   const filterGender = (id) => {
@@ -119,7 +120,7 @@ const Navbar = () => {
                 className={(navData) => (navData.isActive ? "nav-active" : "")}
               >
                 <i className="far fa-heart"></i>
-                {encodedToken && (
+                {encodedToken && userName && (
                   <span className="navbar-badge">{wishlist.length}</span>
                 )}
               </NavLink>
@@ -133,7 +134,7 @@ const Navbar = () => {
                 className={(navData) => (navData.isActive ? "nav-active" : "")}
               >
                 <i className="fas fa-shopping-cart"></i>
-                {encodedToken && (
+                {encodedToken && userName && (
                   <span className="navbar-badge">{cart.length}</span>
                 )}
               </NavLink>

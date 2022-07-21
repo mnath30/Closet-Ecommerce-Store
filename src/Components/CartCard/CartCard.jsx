@@ -29,13 +29,14 @@ const CartCard = ({ item }) => {
           <button
             className="rounded-btn"
             onClick={() =>
-              qty > 0 &&
-              changeCartQuantityService(
-                cartWishlistDispatch,
-                encodedToken,
-                { type: "decrement" },
-                _id
-              )
+              qty > 1
+                ? changeCartQuantityService(
+                    cartWishlistDispatch,
+                    encodedToken,
+                    { type: "decrement" },
+                    _id
+                  )
+                : deleteFromCartService(cartWishlistDispatch, encodedToken, _id)
             }
           >
             -

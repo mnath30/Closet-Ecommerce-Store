@@ -1,5 +1,15 @@
 @import url("../../style/style.css");
 
+.card-btn-main,
+.card-btn-second {
+  word-break: break-word;
+  width: 7rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-btn-main {
   background-color: var(--secondary-color);
   color: var(--white);

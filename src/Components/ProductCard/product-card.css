@@ -1,19 +1,23 @@
 @import url("../../style/style.css");
 
+.card-btn-main,
+.card-btn-second {
+  word-break: break-word;
+  width: 7rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-btn-main {
   background-color: var(--secondary-color);
   color: var(--white);
   border: 2px solid var(--secondary-color);
-  word-break: break-word;
-  max-width: 7rem;
-  height: 2.8rem;
 }
 .card-btn-second {
   border: 2px solid var(--secondary-color);
   background-color: transparent;
-  word-break: break-word;
-  max-width: 7rem;
-  height: 2.8rem;
 }
 
 .singleproduct__btn_section {

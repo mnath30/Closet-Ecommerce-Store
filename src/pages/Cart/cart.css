@@ -5,9 +5,14 @@
   padding: 0.8rem 1.6rem 0 1.6rem;
 }
 
-.main-product {
+.main-product,
+.address__selector_container {
   grid-area: product;
   justify-self: center;
+}
+
+.address__selector_container {
+  width: 100%;
 }
 
 /* Main content */

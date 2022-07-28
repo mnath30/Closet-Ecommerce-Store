@@ -1,8 +1,10 @@
 import { useCartWishlist } from "../../context";
+import { useNavigate } from "react-router-dom";
 import "./total-price.css";
 
-const TotalPrice = ({ discount = 200, deliverycharges = 100 }) => {
+const TotalPrice = ({ discount = 200, deliverycharges = 100, btn, path }) => {
   const { cartWishlist } = useCartWishlist();
+  const navigate = useNavigate();
   const { totalPrice, cart } = cartWishlist;
   discount = totalPrice === 0 ? 0 : discount;
   deliverycharges = totalPrice === 0 ? 0 : deliverycharges;
@@ -42,8 +44,9 @@ const TotalPrice = ({ discount = 200, deliverycharges = 100 }) => {
               totalPrice === 0 ? "btn-disabled" : ""
             }`}
             disabled={totalPrice === 0}
+            onClick={() => (btn === "Place Order" ? navigate(path) : "")}
           >
-            Place Order
+            {btn}
           </button>
         </div>
       </div>

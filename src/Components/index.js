@@ -15,3 +15,4 @@ export { SingleProductDetail } from "./SingleProductDetail/SingleProductDetail";
 export { AddressCard } from "./AddressCard/AddressCard";
 export { Modal } from "./Modal/Modal";
 export { AddressModal } from "./Modal/AddressModal";
+export { CheckoutAddressCard } from "./AddressCard/CheckoutAddressCard";

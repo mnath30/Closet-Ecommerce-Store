@@ -34,7 +34,7 @@ const Cart = () => {
               <EmptyPage item={emptydata} />
             ) : (
               <div className="grid">
-                <TotalPrice />
+                <TotalPrice btn="Place Order" path="/checkout" />
                 <div className="main-product">
                   {cart.map((element) => (
                     <CartCard key={element._id} item={element} />

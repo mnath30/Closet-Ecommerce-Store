@@ -18,6 +18,10 @@
   width: 1.2rem;
 }
 
+.summary-card {
+  margin: 0.8rem auto;
+}
+
 /* Button */
 .cart-main-btn {
   background-color: var(--secondary-btn-color);

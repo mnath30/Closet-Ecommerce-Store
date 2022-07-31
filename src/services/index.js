@@ -3,6 +3,7 @@ export {
   addToCartService,
   deleteFromCartService,
   changeCartQuantityService,
+  clearCartService,
 } from "./cartServices";
 export { loginService, signupService } from "./authServices";
 export {

@@ -2,7 +2,7 @@ import { AddressCard, AddressModal, Modal, Loader } from "../../Components";
 import "./profile.css";
 import { Link } from "react-router-dom";
 import { useDisplayModal } from "../../hooks";
-import { useAddress } from "../../context";
+import { useAddress, useCartWishlist } from "../../context";
 import { CURRENT_UPDATING_ADDRESS } from "../../helper/constants";
 
 const Profile = () => {
@@ -17,6 +17,7 @@ const Profile = () => {
     },
     addressDispatch,
   } = useAddress();
+  const { cartWishlistDispatch } = useCartWishlist();
   const encodedToken = localStorage.getItem("encodedToken");
 
   const editHandler = (item) => {
@@ -75,6 +76,7 @@ const Profile = () => {
                       edit={editHandler}
                       dispatch={addressDispatch}
                       token={encodedToken}
+                      cartDispatch={cartWishlistDispatch}
                     />
                   ))}
                 </div>
@@ -91,6 +93,7 @@ const Profile = () => {
             dispatch={addressDispatch}
             token={encodedToken}
             edit={editingAddress}
+            cartDispatch={cartWishlistDispatch}
           />
         </Modal>
       )}

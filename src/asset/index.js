@@ -14,6 +14,7 @@ import errorimg from "./error-img.svg";
 import errorproductimg from "./error-product-img.svg";
 import emptywishlist from "./emptywishlist.svg";
 import emptycart from "./emptycart.svg";
+import emptyorders from "./emptyorders.svg";
 
 export {
   img01,
@@ -32,4 +33,5 @@ export {
   errorproductimg,
   emptywishlist,
   emptycart,
+  emptyorders,
 };

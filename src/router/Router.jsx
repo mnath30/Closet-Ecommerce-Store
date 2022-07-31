@@ -11,6 +11,7 @@ import {
   Signup,
   Logout,
   Checkout,
+  OrderSummary,
 } from "../pages";
 import Mockman from "mockman-js";
 import { RequiresAuth } from "../helper";
@@ -50,6 +51,14 @@ const Router = () => {
         element={
           <RequiresAuth>
             <Checkout />
+          </RequiresAuth>
+        }
+      />
+      <Route
+        path="/summary"
+        element={
+          <RequiresAuth>
+            <OrderSummary />
           </RequiresAuth>
         }
       />

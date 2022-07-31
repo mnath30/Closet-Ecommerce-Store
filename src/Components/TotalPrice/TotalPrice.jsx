@@ -5,7 +5,7 @@ import "./total-price.css";
 const TotalPrice = ({ discount = 200, deliverycharges = 100, btn, path }) => {
   const { cartWishlist } = useCartWishlist();
   const navigate = useNavigate();
-  const { totalPrice, cart } = cartWishlist;
+  const { totalPrice, cart, currentDeliveryAddress } = cartWishlist;
   discount = totalPrice === 0 ? 0 : discount;
   deliverycharges = totalPrice === 0 ? 0 : deliverycharges;
   return (
@@ -41,10 +41,23 @@ const TotalPrice = ({ discount = 200, deliverycharges = 100, btn, path }) => {
         <div className="card-buttons">
           <button
             className={`btn-card main-btn btn-block txt-md ${
-              totalPrice === 0 ? "btn-disabled" : ""
+              btn !== "Place Order" &&
+              Object.keys(currentDeliveryAddress).length === 0
+                ? "btn-disabled"
+                : ""
             }`}
-            disabled={totalPrice === 0}
-            onClick={() => (btn === "Place Order" ? navigate(path) : "")}
+            disabled={
+              btn !== "Place Order" &&
+              Object.keys(currentDeliveryAddress).length === 0
+            }
+            onClick={(e) =>
+              btn === "Place Order"
+                ? navigate(path)
+                : path(
+                    Number(totalPrice) -
+                      (Number(discount) - Number(deliverycharges))
+                  )
+            }
           >
             {btn}
           </button>

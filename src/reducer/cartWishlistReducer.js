@@ -10,12 +10,21 @@ import {
   DELETE_FROM_WISHLIST,
   WISHLIST_LOADING,
   WISHLIST_ERROR,
+  SET_CURRENT_ADDRESS,
+  TOTAL_PRICE,
+  SET_LATEST_ORDER,
+  CLEAR_CART,
+  CLEAR_CURRENT_DELIVERY_ADDRESS,
 } from "../helper/constants";
 
 const cartWishlistReducer = (state, action) => {
   switch (action.type) {
     case CART_LOADING:
-      return { ...state, cartLoading: true, cartError: "" };
+      return {
+        ...state,
+        cartLoading: true,
+        cartError: "",
+      };
     case GET_CART_ITEMS:
       return {
         ...state,
@@ -78,8 +87,24 @@ const cartWishlistReducer = (state, action) => {
         ...state,
         wishlistError: "There was some error in processing your request",
       };
-    case "TOTAL_PRICE":
+    case TOTAL_PRICE:
       return { ...state, totalPrice: action.payload };
+    case SET_CURRENT_ADDRESS:
+      return { ...state, currentDeliveryAddress: action.payload };
+    case SET_LATEST_ORDER:
+      return {
+        ...state,
+        latestOrder: {
+          paymentId: action.payload,
+          orderItems: [...state.cart],
+          orderTotal: state.totalPrice,
+          shippingAddress: { ...state.currentDeliveryAddress },
+        },
+      };
+    case CLEAR_CURRENT_DELIVERY_ADDRESS:
+      return { ...state, currentDeliveryAddress: {} };
+    case CLEAR_CART:
+      return { ...state, cart: action.payload };
     default:
       return { ...state };
   }

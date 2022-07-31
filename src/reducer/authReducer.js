@@ -17,6 +17,7 @@ const authReducer = (state, action) => {
         ...state,
         encodedToken: action.payload.encodedToken,
         userName: action.payload.foundUser.fullName,
+        email: action.payload.foundUser.email,
         loading: false,
         error: "",
       };
@@ -26,7 +27,8 @@ const authReducer = (state, action) => {
       return {
         ...state,
         encodedToken: action.payload.encodedToken,
-        userName: action.payload.createdUser.fullname,
+        userName: action.payload.createdUser.fullName,
+        email: action.payload.createdUser.email,
         loading: false,
         error: "",
       };
@@ -37,6 +39,7 @@ const authReducer = (state, action) => {
         ...state,
         encodedToken: "",
         userName: "",
+        email: "",
         loading: false,
         error: "",
       };

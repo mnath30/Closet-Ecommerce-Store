@@ -6,6 +6,7 @@ import {
   CHANGE_CART_QUANTITY,
   CART_ERROR,
   GET_CART_ITEMS,
+  CLEAR_CART,
 } from "../helper/constants";
 
 const getCartService = async (dispatch, token) => {
@@ -73,9 +74,23 @@ const changeCartQuantityService = async (
   }
 };
 
+const clearCartService = async (dispatch, token) => {
+  try {
+    const response = await axios.delete("api/user/cart/all", {
+      headers: { authorization: token },
+    });
+    if (response.status === 200) {
+      dispatch({ type: CLEAR_CART, payload: response.data.cart });
+    }
+  } catch (error) {
+    dispatch({ type: CART_ERROR, payload: error });
+  }
+};
+
 export {
   getCartService,
   addToCartService,
   deleteFromCartService,
   changeCartQuantityService,
+  clearCartService,
 };

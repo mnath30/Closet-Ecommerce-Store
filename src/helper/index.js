@@ -15,3 +15,4 @@ export {
   rating,
   sortingCategory,
 } from "./categoryData";
+export { loadRazorpay } from "./loadRazorpay";

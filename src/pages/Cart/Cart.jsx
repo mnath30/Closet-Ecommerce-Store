@@ -3,6 +3,7 @@ import { EmptyPage, TotalPrice, CartCard, Loader } from "../../Components";
 import { emptycart } from "../../asset";
 import { useCartWishlist } from "../../context";
 import { useEffect } from "react";
+import { TOTAL_PRICE } from "../../helper/constants";
 
 const emptydata = {
   source: emptycart,
@@ -16,7 +17,7 @@ const Cart = () => {
 
   useEffect(() => {
     const price = cart.reduce((prev, curr) => prev + curr.price * curr.qty, 0);
-    cartWishlistDispatch({ type: "TOTAL_PRICE", payload: price });
+    cartWishlistDispatch({ type: TOTAL_PRICE, payload: price });
   }, [cartWishlistDispatch, cart]);
 
   return (
@@ -34,7 +35,7 @@ const Cart = () => {
               <EmptyPage item={emptydata} />
             ) : (
               <div className="grid">
-                <TotalPrice />
+                <TotalPrice btn="Place Order" path="/checkout" />
                 <div className="main-product">
                   {cart.map((element) => (
                     <CartCard key={element._id} item={element} />

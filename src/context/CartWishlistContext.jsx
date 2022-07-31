@@ -10,6 +10,13 @@ const initialState = {
   wishlistLoading: false,
   wishlistError: "",
   totalPrice: 0,
+  currentDeliveryAddress: {},
+  latestOrder: {
+    paymentId: "",
+    orderItems: [],
+    orderTotal: 0,
+    shippingAddress: {},
+  },
 };
 
 const CartWishlistContext = createContext(initialState);

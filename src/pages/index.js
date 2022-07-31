@@ -8,3 +8,5 @@ export { Error } from "./Error/Error";
 export { Login } from "./Authentication/Login";
 export { Signup } from "./Authentication/Signup";
 export { Logout } from "./Authentication/Logout";
+export { Checkout } from "./Cart/Checkout";
+export { OrderSummary } from "./Cart/OrderSummary";

@@ -2,7 +2,10 @@ import "./modal.css";
 import { useState } from "react";
 import { addAddressService, updateAddressService } from "../../services";
 import { initialAddress } from "../../helper";
-import { CURRENT_UPDATING_ADDRESS } from "../../helper/constants";
+import {
+  CURRENT_UPDATING_ADDRESS,
+  CLEAR_CURRENT_DELIVERY_ADDRESS,
+} from "../../helper/constants";
 
 const AddressModal = ({
   userAddress = initialAddress,
@@ -10,6 +13,7 @@ const AddressModal = ({
   dispatch,
   token,
   edit,
+  cartDispatch,
 }) => {
   const [addressDetails, setAddressDetails] = useState({
     fullname: userAddress.fullname,
@@ -47,6 +51,7 @@ const AddressModal = ({
           payload: {},
           editing: false,
         });
+        cartDispatch({ type: CLEAR_CURRENT_DELIVERY_ADDRESS });
       } else if (mobile.length < 10) {
         setAddressDetails({
           ...addressDetails,

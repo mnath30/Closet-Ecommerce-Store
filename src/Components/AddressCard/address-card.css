@@ -15,6 +15,8 @@
   width: 100%;
   border-top: 1px solid var(--border-color);
   margin-top: 0.8rem;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .address_btn {
@@ -25,6 +27,33 @@
 
 .separator {
   border-left: 1px solid var(--border-color);
+}
+
+.horizontal__address_card {
+  align-items: left;
+  width: 80%;
+  border: 1px solid var(--border-color);
+  margin: 0.8rem auto;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.address__inp_container {
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.address__label {
+  width: 90%;
+  text-align: left;
+  word-break: break-all;
+  cursor: pointer;
+}
+
+.address__inp {
+  margin: 1rem;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 770px) {

@@ -11,6 +11,7 @@ const initialUserState = {
   userName: localStorage.getItem("username")
     ? localStorage.getItem("username")
     : "",
+  email: "",
   loading: false,
   error: "",
   cart: [],

@@ -1,7 +1,8 @@
 import "./address-card.css";
 import { deleteAddressService } from "../../services";
+import { CLEAR_CURRENT_DELIVERY_ADDRESS } from "../../helper/constants";
 
-const AddressCard = ({ address, dispatch, token, edit }) => {
+const AddressCard = ({ address, dispatch, token, edit, cartDispatch }) => {
   const { _id, fullname, mobile, pincode, state, locality, city } = address;
 
   return (
@@ -25,7 +26,10 @@ const AddressCard = ({ address, dispatch, token, edit }) => {
         <span className="separator"></span>
         <button
           className="btn address_btn card-btn-second"
-          onClick={() => deleteAddressService(dispatch, token, _id)}
+          onClick={() => {
+            deleteAddressService(dispatch, token, _id);
+            cartDispatch({ type: CLEAR_CURRENT_DELIVERY_ADDRESS });
+          }}
         >
           Delete
         </button>
